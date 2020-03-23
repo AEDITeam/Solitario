@@ -70,21 +70,21 @@ public class Mesa {
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
 
-                montonInterior[i][j].push(b.mazo.pop());
+                montonInterior[i][j].push(b.cogerCarta());
             }
         }//fin for
 
         int x = 0;
         while (x < 4) {
 
-            montonInterior[x][x].push(b.mazo.pop());
+            montonInterior[x][x].push(b.cogerCarta());
             x++;
 
         }
         int z = 1;
         while (z < 4) {
 
-            montonInterior[z][4 - z].push(b.mazo.pop());
+            montonInterior[z][4 - z].push(b.cogerCarta());
             z++;
 
         }
@@ -92,7 +92,7 @@ public class Mesa {
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
 
-                montonInterior[i][j].push(b.mazo.pop());//Dar la vuelta
+                montonInterior[i][j].push(b.cogerCarta());//Dar la vuelta
             }
         }//fin for
                 
