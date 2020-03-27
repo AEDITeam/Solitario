@@ -126,9 +126,21 @@ public class Mesa {
         return toret;
     }
 
-    public void colocarCarta(Carta carta, int i, int j) {
+    public void colocarCartaMontonInterior(Carta carta, int i, int j) {
 
         montonInterior[i][j].push(carta);
+    }
+    
+    public void colocarCartaMontonExterior(Carta carta, int i) {
+
+        montonExterior[i].push(carta);
+    }
+    
+   
+    public void moverCartaInteriorExterior(Carta carta, int i, int j,int k){
+    
+        colocarCartaMontonExterior(quitarCarta(i, j), k);
+
     }
 
     @Override
