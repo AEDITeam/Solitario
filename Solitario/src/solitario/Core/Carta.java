@@ -11,12 +11,10 @@ public class Carta {
 
     private final int numero;
     private final Palos palo;
-    private boolean girada;
 
     public Carta(int numero, Palos palo, boolean girada) {
         this.numero = numero;
         this.palo = palo;
-        this.girada = girada;
     }
 
     public int getNumero() {
@@ -27,17 +25,16 @@ public class Carta {
         return palo;
     }
 
-    public boolean isGirada() {
-        return girada;
-    }
-
-    public void setGirada(boolean girada) {
-        this.girada = girada;
-    }
-
     @Override
     public String toString() {
-        return "Carta{" + "numero=" + numero + ", palo=" + palo + ", girada=" + girada + '}';
+        StringBuilder cadena = new StringBuilder();
+
+        cadena.append("Carta {").append("\n");
+        cadena.append(" - ").append(numero).append("\n");
+        cadena.append(" - ").append(palo).append("\n");
+        cadena.append("}");
+       
+        return cadena.toString();
     }
 
     
