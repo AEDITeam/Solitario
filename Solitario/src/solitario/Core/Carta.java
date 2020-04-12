@@ -25,6 +25,7 @@ public class Carta {
         return palo;
     }
 
+   
     @Override
     public String toString() {
         StringBuilder cadena = new StringBuilder();
