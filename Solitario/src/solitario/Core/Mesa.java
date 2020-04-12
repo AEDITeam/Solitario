@@ -142,6 +142,12 @@ public class Mesa {
         colocarCartaMontonExterior(quitarCarta(i, j), k);
 
     }
+    
+    public void moverCartaInteriorInterior(int i, int j,int k,int l){
+    
+        colocarCartaMontonInterior(quitarCarta(i, j), k, l);
+
+    }
 
     @Override
     public String toString() {
