@@ -137,7 +137,7 @@ public class Mesa {
     }
     
    
-    public void moverCartaInteriorExterior(Carta carta, int i, int j,int k){
+    public void moverCartaInteriorExterior(int i, int j,int k){
     
         colocarCartaMontonExterior(quitarCarta(i, j), k);
 
