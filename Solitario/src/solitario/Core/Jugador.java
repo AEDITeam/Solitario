@@ -11,48 +11,33 @@ package solitario.Core;
  */
 public class Jugador {
     
-    
-    public boolean existeMovimiento(){
-    
-    if(Comprobar movimiento == 0){
-    
-        System.out.println("No ha movimientos  a realizar, el juego ha finalizado");
-    
-    
+    public String nombre;
+
+    public Jugador(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
     
-    else{
-            
-            // Invocamos función que nos permita continuar con el movimiento
-            
-            }
-    return existeMovimiento;
-    }
+       
     
     
-    public boolean darVuelta(){
-    
-    if(cartaVolteable==1){
-    
-    // Invocamos función de voltear carta
-    
-    
-    }
-    
-    else{
-    
-    // Invocamos función de enviar a la pila de descartes
-    
-    
-    }
-    
-    return darVuelta;
-    }
-    
-    
-    public boolean descartar(){
-    
-    if(cartaDescartable == 1){
+    public boolean descartar(int i, int j, int k){
+        
+                
+    if(esDescartable(i ,j ,k) == 1){
+        
+        
+        moverCartaInteriorExterior(i, j);
+        
+        
+        
     
     
     // Invocamos función de mover a la pila de descartes
@@ -60,6 +45,9 @@ public class Jugador {
     
     
     
+    }
+    else{
+        print("No se puede hacer este movimiento");
     }
     
     

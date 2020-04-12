@@ -10,7 +10,7 @@ import java.util.Stack;
 
 public class Baraja {
 
-    private Stack<Carta> mazo;
+    private Stack <Carta> mazo;
 
     public Baraja() {
 
