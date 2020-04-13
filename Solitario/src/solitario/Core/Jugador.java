@@ -24,11 +24,17 @@ public class Jugador {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    @Override
+    public String toString() {
+        return "Jugador{" + "nombre=" + nombre + '}';
+    }
     
-       
+   
     
     
-    public boolean descartar(int i, int j, int k){
+    
+    void descartar(int i, int j, int k){
         
                 
     if(esDescartable(i ,j ,k) == 1){
@@ -37,33 +43,20 @@ public class Jugador {
         moverCartaInteriorExterior(i, j);
         
         
-        
-    
-    
-    // Invocamos función de mover a la pila de descartes
-    
-    
-    
-    
     }
     else{
-        print("No se puede hacer este movimiento");
+        System.out.println("No se puede hacer este movimiento");
     }
     
     
-    return darVuelta;
+    
     
     }
     
     
-    public boolean moverAOtroMonton(){
-    
-    
-    if (cartaLibre == 1){
+    void moverAOtroMonton(){
 
-
-        // Invocamos función de mover la carta a otro que se pueda mover
-    
+          colocarCartaMontonInterior(quitarCarta(i, j), k, l);    
 
 }    
     }   
