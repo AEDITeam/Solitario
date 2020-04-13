@@ -60,13 +60,6 @@ public class Jugador {
 
 }    
     }   
+        
     
-    /* Aquí escribimos las funciones con las que trabajaremos que no correspondan a mesa
-    estas funciones pueden ser de distintos tipos y nos ayudarán a realizar estos movimientos, 
-    con ellas recorreremos el array de cartas (bucles for) y observaremos cuales son volteables
-    culaes son descartables y cuales están libres.
-    */ 
-    
-    
-    
-}
+
