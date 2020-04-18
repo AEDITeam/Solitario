@@ -3,6 +3,9 @@
  * Se recomienda una implementación modular.
  */
 package solitario.IU;
+
+import java.util.Scanner;
+
 /**
  *
  * @author AEDI
@@ -29,5 +32,19 @@ public class Solitario {
             }
     return existeMovimiento;
     }
+    
+    public static boolean seguirJugando() {
+        Scanner sc = new Scanner(System.in);
+        char respuesta;
+        do {
+            System.out.print("¿Quieres seguir jugando? (S/N): ");
+            respuesta = sc.nextLine().toUpperCase().charAt(0);
+        } while (respuesta != 'S' && respuesta != 'N');
+        if (respuesta == 'S') {
+            return true;
+        } else {
+            return false;
+        }
+    
 
 }
