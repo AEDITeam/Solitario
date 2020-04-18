@@ -12,9 +12,12 @@ import solitario.Core.Mesa;
 public class Jugador {
     
     public String nombre;
-
+    
+    public Mesa mesa;
+    
     public Jugador(String nombre) {
         this.nombre = nombre;
+        this.mesa = new Mesa();
     }
 
     public String getNombre() {
@@ -34,13 +37,14 @@ public class Jugador {
     
     
     
-    void descartar(int i, int j, int k){
+    
+    public void descartar(int i, int j, int k){
         
                 
-    if(esDescartable(i ,j ,k) == 1){
+    if(esDescartable(i ,j ,k) == TRUE){
         
         
-        moverCartaInteriorExterior(i, j);
+        mesa.moverCartaInteriorExterior(i, j, k);
         
         
     }
@@ -54,12 +58,27 @@ public class Jugador {
     }
     
     
-    void moverAOtroMonton(){
-
-          colocarCartaMontonInterior(quitarCarta(i, j), k, l);    
-
-}    
-    }   
+    public void moverAOtroMonton(int i, int j, int k, int l){
         
+        if(esIntercambiable(i,j,k,l) == TRUE){
+            
+          mesa.moverCartaInteriorInterior(i, j, k, l);    
+          
+        }
+        else{
+        
+            
+            
+        }
+        
+    }   
     
-
+    /* Aquí escribimos las funciones con las que trabajaremos que no correspondan a mesa
+    estas funciones pueden ser de distintos tipos y nos ayudarán a realizar estos movimientos, 
+    con ellas recorreremos el array de cartas (bucles for) y observaremos cuales son volteables
+    culaes son descartables y cuales están libres.
+    */ 
+    
+    
+    
+}
