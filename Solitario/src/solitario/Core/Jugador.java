@@ -4,7 +4,7 @@
  *                o la mueve encima de otra carta del interior
  */
 package solitario.Core;
-
+import solitario.Core.Mesa;
 /**
  *
  * @author juanm
