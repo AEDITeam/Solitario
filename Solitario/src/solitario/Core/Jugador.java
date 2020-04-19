@@ -39,37 +39,15 @@ public class Jugador {
     
     
     public void descartar(int i, int j, int k){
-        
-                
-    if(esDescartable(i ,j ,k) == TRUE){
-        
-        
+          
         mesa.moverCartaInteriorExterior(i, j, k);
         
-        
-    }
-    else{
-        System.out.println("No se puede hacer este movimiento");
-    }
-    
-    
-    
-    
     }
     
     
     public void moverAOtroMonton(int i, int j, int k, int l){
         
-        if(esIntercambiable(i,j,k,l) == TRUE){
-            
-          mesa.moverCartaInteriorInterior(i, j, k, l);    
-          
-        }
-        else{
-        
-            
-            
-        }
+        mesa.moverCartaInteriorInterior(i, j, k, l);
         
     }   
     
