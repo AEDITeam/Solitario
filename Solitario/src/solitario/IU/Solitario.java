@@ -6,115 +6,110 @@ package solitario.IU;
 
 //import java.util.Scanner;
 
+import java.util.Scanner;
+import solitario.Core.Jugador;
+import solitario.Core.Mesa;
+import static solitario.IU.ES.pideCadena;
+import static solitario.IU.ES.pideNumero;
+
+
 /**
  *
  * @author AEDI
  */
 public class Solitario {
+        public static void inicioPartida(){
+        System.out.println( "\nBienvenido al juego solitario" );
+        String nombre = pideCadena("Dame tu nombre: ");
+        Jugador jugador = new Jugador(nombre);
         
-    public static void inicioPartida(){
         
-        int sel;
-        
-//        System.out.println("Escoge un movimiento"); 
-//        
-//        Scanner kb = new Scanner(System.in);
-//        
-        sel = pideNumero("Escoge un movimiento");                          //revisar
-        
-        switch(sel){
+        do{
             
-            case 1:                                //mover interior interior
-                
-                int i, j ,k ,l;
-                
-                
-                System.out.println("Escoge las coordenadas de una carta y de la pila interior de destino:\n");
-                
+            int op = 1;
+            Mesa mesa = new Mesa();
 
-                i = pideNumero("\nPrimera coordenada de la carta:");
-                
-                j = pideNumero("\nSegunda coordenada de la carta:");
-                
-                k = pideNumero("\nPrimera coordenada de la pila:");
-                
-                l = pideNumero("\nSegunda coordenada de la pila:");
-                
-                
-                moverAOtroMonton(i, j, k, l);
-
-                
-                break;
+        do {
+            System.out.println( "\nEstas juagando al increible juego solitario" );
             
-            case 2:                                //mover interior exterior
-                
-                
-                int x, y ,z;
-                
-                
-                System.out.println("Escoge las coordenadas de una carta y la pila de descartes de destino:\n");
-                                
 
-                x = pideNumero("\nPrimera coordenada de la carta:");               
+            op = menu();
 
-                y = pideNumero("\nSegunda coordenada de la carta:");                
+            switch( op ) {
 
-                z = pideNumero("\nPila de destino:");
-                
-                
-                descartar(x, y, z);         
-                
-                
-                break;
-                
-            case 3:                                //finalizar partida
-                
-                seguirJugando();
-                
-                break;
-        }
-    } 
+                case 1:
+                    moverCarta();
+                    break;
+                case 2:
+                    //mesa.movimientosPosibles(  );
+                    break;
+                case 3:
+                    System.out.println( "Fin." );
+                    op = 0;
+                    break;
+                case 42:
+                    System.out.println("\nJuego desarrollado por:");
+                    System.out.println("\nJuanma Peteiro, Andres Garcia, Cedric Piñeiro, Daniel Rodriguez y Victor Rodriguez.");
+                    break;
+                default:
+                    System.out.println( "No es correcta esa opción ( " 
+                                        + op + " )" );
+            }
+        } while( op != 0 );
+            
+        }while(seguirJugando());
+    }
     
-//    public boolean existeMovimiento(){
-//    
-//        if(Comprobar movimiento == 0){
-//    
-//            System.out.println("No ha movimientos  a realizar, el juego ha finalizado");
-//            
-//        }
-//    
-//        else{
-//            
-//            // Invocamos función que nos permita continuar con el movimiento
-//            
-//        }
-//        
-//    return existeMovimiento;
-//    }
     
     public static boolean seguirJugando() {
         
-//        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         
         char respuesta;
         
         do {
             
-//            System.out.print("¿Quieres seguir jugando? (S/N): ");
-//            respuesta = sc.nextLine().toUpperCase().charAt(0);
+            System.out.print("¿Quieres seguir jugando? (S/N): ");
+            respuesta = sc.nextLine().toUpperCase().charAt(0);
             
-            respuesta = pideChar("¿Quieres seguir jugando? (S/N): ");
-            
-        } while (respuesta != 'S' || respuesta != 'N' || respuesta != 's' || respuesta != 'n');
+        } while (respuesta != 'S' && respuesta != 'N');
         
-        
-        if (respuesta == 'S' || respuesta == 's') {
+        if (respuesta == 'S') {
             return true;
-        }  
+        } 
         
         else{
             return false;
-            
         }
     }
+    
+    public static int menu()
+    {
+        int toret;
+
+        do {
+            System.out.println(
+                              "\n1. Mover carta\n"
+                            + "2. Mostrar pista\n"
+                            + "3. Finalizar partida\n");
+            toret = pideNumero( "Selecciona: " );
+        } while( toret < 1
+              && toret > 3 );
+
+        System.out.println();
+        return toret;
+    }
+    public static void moverCarta(){
+        //Condiciones para mover carta
+        //Elegir funcion correspondiente en funcion de tipo de movimiento
+        /*
+        if(movimientoPosible == True){
+            ....
+        }else{
+            sout("Ese movimiento no es posible")
+        }
+        */
+        
+    }
+    
 }
