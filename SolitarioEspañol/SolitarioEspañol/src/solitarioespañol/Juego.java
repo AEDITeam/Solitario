@@ -16,16 +16,18 @@ import static solitarioespañol.ES.pideNumero;
  */
 public class Juego {
     public static void inicioPartida(){
+        System.out.println( "\nBienvenido al juego solitario" );
         String nombre = pideCadena("Dame tu nombre: ");
         Jugador jugador = new Jugador(nombre);
-        Mesa mesa = new Mesa();
+        
         
         do{
             
             int op = 1;
+            Mesa mesa = new Mesa();
 
         do {
-            System.out.println( "\nBienvenido al juego solitario" );
+            System.out.println( "\nEstas juagando al increible juego solitario" );
             
 
             op = menu();
