@@ -44,6 +44,10 @@ public class Juego {
                     System.out.println( "Fin." );
                     op = 0;
                     break;
+                case 42:
+                    System.out.println("\nJuego desarrollado por:");
+                    System.out.println("\nJuanma Peteiro, Andres Garcia, Cedric Piñeiro, Daniel Rodriguez y Victor Rodriguez.");
+                    break;
                 default:
                     System.out.println( "No es correcta esa opción ( " 
                                         + op + " )" );
