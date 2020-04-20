@@ -96,16 +96,23 @@ public class Juego {
         System.out.println();
         return toret;
     }
-    public static void moverCarta(){
+    public static int moverCarta(){
         //Condiciones para mover carta
         //Elegir funcion correspondiente en funcion de tipo de movimiento
-        /*
-        if(movimientoPosible == True){
-            ....
-        }else{
-            sout("Ese movimiento no es posible")
-        }
-        */
+        
+        int toret2;
+        
+        do{
+        System.out.println(
+                           "\n1. Mover una carta de una pila de la mesa a otra\n"
+                           + "2. Mover una carta de una pila del interior a la pila de descartes\n");
+        toret2 = pideNumero( "Selecciona: ");
+        
+        }while (toret2 < 1 && toret2 > 3);
+        System.out.println();
+        return toret2;
+        
+        
         
     }
         
