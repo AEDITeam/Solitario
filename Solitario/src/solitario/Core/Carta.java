@@ -30,9 +30,9 @@ public class Carta {
     public String toString() {
         StringBuilder cadena = new StringBuilder();
 
-        cadena.append("Carta {").append("\n");
-        cadena.append(" - ").append(numero).append("\n");
-        cadena.append(" - ").append(palo).append("\n");
+        cadena.append("{");
+        cadena.append(numero);
+        cadena.append(" - ").append(palo);
         cadena.append("}");
        
         return cadena.toString();

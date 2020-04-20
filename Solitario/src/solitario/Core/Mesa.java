@@ -151,11 +151,17 @@ public class Mesa {
 
     @Override
     public String toString() {
+        
+        System.out.println("");
+        
+        System.out.println("[" + montonExterior[0].peek()+ "]" + "[" + montonExterior[1].peek()+ "]"+ "[" + montonExterior[2].peek()+ "]"+ "[" + montonExterior[3].peek()+ "]");
+        System.out.println("\n");
        
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
 
-                System.out.println(montonInterior[i][j].peek());
+                System.out.println("[" + montonInterior[i][0].peek()+ "] " + "[" +  montonInterior[i][1].peek()+ "] "   + "[" + montonInterior[i][2].peek()+ "] " + "[" + montonInterior[i][3].peek()+ "] ");
+                System.out.println("\n");
             
             }
         }
