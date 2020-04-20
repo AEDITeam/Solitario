@@ -108,7 +108,7 @@ public class Juego {
                            + "2. Mover una carta de una pila del interior a la pila de descartes\n");
         toret2 = pideNumero( "Selecciona: ");
         
-        }while (toret2 < 1 && toret2 > 3);
+        }while (toret2 < 1 && toret2 > 2);
         System.out.println();
         return toret2;
         
