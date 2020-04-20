@@ -19,8 +19,11 @@ public class Juego {
         System.out.println( "\nBienvenido al juego solitario" );
         String nombre = pideCadena("Dame tu nombre: ");
         Jugador jugador = new Jugador(nombre);
-        
-        
+        callBuclePrincipal();       
+    }
+    
+    
+    public static void callBuclePrincipal(){
         do{
             
             int op = 1;
@@ -35,7 +38,7 @@ public class Juego {
             switch( op ) {
 
                 case 1:
-                    moverCarta();
+                    callBucleMovimiento();
                     break;
                 case 2:
                     mesa.movimientosPosibles(  );
@@ -45,8 +48,7 @@ public class Juego {
                     op = 0;
                     break;
                 case 42:
-                    System.out.println("\nJuego desarrollado por:");
-                    System.out.println("\nJuanma Peteiro, Andres Garcia, Cedric Piñeiro, Daniel Rodriguez y Victor Rodriguez.");
+                    callEasterEgg();
                     break;
                 default:
                     System.out.println( "No es correcta esa opción ( " 
@@ -57,6 +59,41 @@ public class Juego {
         }while(seguirJugando());
     }
     
+    
+    public static void callEasterEgg(){
+        System.out.println("---------------------------------------------------------------------------------------------");
+        System.out.println("\nGracias por jugar al Solitario");
+        System.out.println("\nDesarrollado por:");
+        System.out.println("\nJuanma Peteiro || Andres Garcia || Cedric Piñeiro || Daniel Rodriguez || Victor Rodriguez.");
+        System.out.println("---------------------------------------------------------------------------------------------");
+    }
+    
+    
+    public static void callBucleMovimiento(){
+        int op = 1;
+        do {
+            System.out.println( "\nEscoge el movimiento que deseas hacer" );
+            
+
+            op = moverCarta();
+
+            switch( op ) {
+
+                case 1:
+                    //Mover carta interior
+                    op = 0;
+                    break;
+                case 2:
+                    //Mover carta interior a exterior
+                    op = 0;
+                    break;
+                default:
+                    System.out.println( "No es correcta esa opción ( " 
+                                        + op + " )" );
+            }
+        } while( op != 0 );
+        
+    }
     
     public static boolean seguirJugando() {
         
@@ -108,12 +145,9 @@ public class Juego {
                            + "2. Mover una carta de una pila del interior a la pila de descartes\n");
         toret2 = pideNumero( "Selecciona: ");
         
-        }while (toret2 < 1 && toret2 > 3);
+        }while (toret2 < 1 && toret2 > 2);
         System.out.println();
         return toret2;
-        
-        
-        
     }
         
 }

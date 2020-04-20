@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 *This branch is only for testing 
 
+=======
+>>>>>>> 5871df53e48bf51d6deb1bc838d3ff9085fc9aa7
 # Solitario
 
 El solitario es un juego de cartas para el que no necesitas a nadie más. Este solitario está pensado para esos momentos
