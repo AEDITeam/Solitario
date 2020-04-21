@@ -80,11 +80,11 @@ public class Juego {
             switch( op ) {
 
                 case 1:
-                    moverCartaInteriorInterior(int i, int j,int k,int l);
+                    moverCartaInteriorInterior(i,j,k,l);
                     op = 0;
                     break;
                 case 2:
-                    moverCartaInteriorExterior(int i, int j,int k);
+                    moverCartaInteriorExterior(i, j, k);
                     op = 0;
                     break;
                 default:
