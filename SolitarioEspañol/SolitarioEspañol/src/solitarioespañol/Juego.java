@@ -137,7 +137,7 @@ public class Juego {
         //Condiciones para mover carta
         //Elegir funcion correspondiente en funcion de tipo de movimiento
         
-        int toret2;
+        int toret2,i=0;
         
         do{
         System.out.println(
@@ -147,7 +147,25 @@ public class Juego {
         
         }while (toret2 < 1 || toret2 > 2);
         System.out.println();
+        
+        do{
+        
+        switch (i){
+        
+            case 1:
+                   //moverInteriorInterior();
+                   break;
+                   
+            case 2:
+                  //moverInteriorExterior();
+        
+        
+        }
+        
+        }while(i != 1 || i !=2);
+        
         return toret2;
+        
     }
         
 }
