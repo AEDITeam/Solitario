@@ -128,7 +128,7 @@ public class Juego {
                             + "3. Finalizar partida\n");
             toret = pideNumero( "Selecciona: " );
         } while( toret < 1
-              && toret > 3 );
+              || toret > 3 );
 
         System.out.println();
         return toret;
@@ -145,7 +145,7 @@ public class Juego {
                            + "2. Mover una carta de una pila del interior a la pila de descartes\n");
         toret2 = pideNumero( "Selecciona: ");
         
-        }while (toret2 < 1 && toret2 > 2);
+        }while (toret2 < 1 || toret2 > 2);
         System.out.println();
         return toret2;
     }
