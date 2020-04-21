@@ -137,7 +137,7 @@ public class Juego {
         //Condiciones para mover carta
         //Elegir funcion correspondiente en funcion de tipo de movimiento
         
-        int toret2,i=0;
+        int toret2;
         
         do{
         System.out.println(
