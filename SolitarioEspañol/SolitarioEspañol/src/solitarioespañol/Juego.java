@@ -148,22 +148,6 @@ public class Juego {
         }while (toret2 < 1 || toret2 > 2);
         System.out.println();
         
-        do{
-        
-        switch (i){
-        
-            case 1:
-                   //moverInteriorInterior();
-                   break;
-                   
-            case 2:
-                  //moverInteriorExterior();
-        
-        
-        }
-        
-        }while(i != 1 || i !=2);
-        
         return toret2;
         
     }
