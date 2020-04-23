@@ -28,7 +28,7 @@ public class Baraja {
             for (int x = 0; x < cartasAceptadas.length; x++) {
 
                 // new Carta(Palo, Numero, Volteada)
-                mazo.push(new Carta(cartasAceptadas[x], palo, true));
+                mazo.push(new Carta(cartasAceptadas[x], palo));
             }
         }
 

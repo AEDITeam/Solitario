@@ -97,7 +97,14 @@ public class Mesa {
                 montonInterior[i][j].push(b.cogerCarta());//Dar la vuelta
             }
         }//fin for
-                
+      
+            
+            montonExterior[0].push(new Carta(0,Palos.BASTOS)); 
+            montonExterior[1].push(new Carta(0,Palos.COPAS)); 
+            montonExterior[2].push(new Carta(0,Palos.ESPADAS)); 
+            montonExterior[3].push(new Carta(0,Palos.OROS)); 
+           
+            
 
     }//fin funcion
 

@@ -12,7 +12,7 @@ public class Carta {
     private final int numero;
     private final Palos palo;
 
-    public Carta(int numero, Palos palo, boolean girada) {
+    public Carta(int numero, Palos palo) {
         this.numero = numero;
         this.palo = palo;
     }
