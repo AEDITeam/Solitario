@@ -31,16 +31,19 @@ public class Mesa {
         //crear pilas en el array
         for (int j = 0; j < 4; j++) {
             montonExterior[j] = new Stack<>();
-        }      
+        }
+        
+         
+        
+        
+        
+        
         
         this.colocarCartas(new Baraja());
-        this.toString();    
+        this.toString();
         
-    }
-    public void moverCarta(){
         
-    }
-    public void movimientosPosibles(){
+        
         
     }
 
@@ -76,7 +79,14 @@ public class Mesa {
                 montonInterior[i][j].push(b.cogerCarta());//Dar la vuelta
             }
         }//fin for
-                
+      
+            
+            montonExterior[0].push(new Carta(0,Palos.BASTOS)); 
+            montonExterior[1].push(new Carta(0,Palos.COPAS)); 
+            montonExterior[2].push(new Carta(0,Palos.ESPADAS)); 
+            montonExterior[3].push(new Carta(0,Palos.OROS)); 
+           
+            
 
     }//fin funcion
 
@@ -94,7 +104,7 @@ public class Mesa {
         }//fin for
 
         return toret;
-    } //fin funcion
+    }
 
     public Carta quitarCarta(int i, int j) {
 
@@ -130,11 +140,17 @@ public class Mesa {
 
     @Override
     public String toString() {
+        
+        System.out.println("");
+        
+        System.out.println("[" + montonExterior[0].peek()+ "]" + "[" + montonExterior[1].peek()+ "]"+ "[" + montonExterior[2].peek()+ "]"+ "[" + montonExterior[3].peek()+ "]");
+        System.out.println("\n");
        
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
 
-                System.out.println(montonInterior[i][j].peek());
+                System.out.println("[" + montonInterior[i][0].peek()+ "] " + "[" +  montonInterior[i][1].peek()+ "] "   + "[" + montonInterior[i][2].peek()+ "] " + "[" + montonInterior[i][3].peek()+ "] ");
+                System.out.println("\n");
             
             }
         }
@@ -142,6 +158,12 @@ public class Mesa {
         
         return "";
     }
+    
+    
+    
+    
+    
+    
     
 
 }//fin clase-----------------------------------------
