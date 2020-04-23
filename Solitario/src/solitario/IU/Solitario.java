@@ -51,7 +51,6 @@ public class Solitario {
                     op = 0;
                     break;
                 case 42:
-                    System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
                     callEasterEgg();
                     break;
                 default:
@@ -130,7 +129,7 @@ public class Solitario {
                             + "3. Finalizar partida\n");
             toret = pideNumero( "Selecciona: " );
         } while( toret < 1
-              || toret > 3 || toret == 42 );
+              || toret > 3 );
 
         System.out.println();
         return toret;
