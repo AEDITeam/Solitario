@@ -10,6 +10,7 @@ import java.util.Scanner;
 import static solitarioespañol.ES.pideCadena;
 import static solitarioespañol.ES.pideNumero;
 
+
 /**
  *
  * @author juanm
@@ -38,7 +39,7 @@ public class Juego {
             switch( op ) {
 
                 case 1:
-                    callBucleMovimiento();
+                    callBucleMovimiento(mesa);
                     break;
                 case 2:
                     mesa.movimientosPosibles(  );
@@ -69,7 +70,7 @@ public class Juego {
     }
     
     
-    public static void callBucleMovimiento(){
+    public static void callBucleMovimiento(Mesa mesa){
         int op = 1;
         do {
             System.out.println( "\nEscoge el movimiento que deseas hacer" );
@@ -81,11 +82,29 @@ public class Juego {
 
                 case 1:
                     
-                    moverAOtroMonton(Mesa mesa, int i, int j,int k,int l);
+                    int i, j ,k ,l;
+                
+                    System.out.println("Escoge las coordenadas de una carta y de la pila interior de destino:\n");
+                
+                    i = pideNumero("\nPrimera coordenada de la carta:");
+                    j = pideNumero("\nSegunda coordenada de la carta:");
+                    k = pideNumero("\nPrimera coordenada de la pila:");
+                    l = pideNumero("\nSegunda coordenada de la pila:");
+                    
+                    moverAOtroMonton(mesa, i, j, k, l);
                     op = 0;
                     break;
                 case 2:
-                    descartar(Mesa mesa, int i, int j,int k);
+                    
+                    int x, y ,z;
+             
+                    System.out.println("Escoge las coordenadas de una carta y la pila de descartes de destino:\n");
+                     
+                    x = pideNumero("\nPrimera coordenada de la carta:");               
+                    y = pideNumero("\nSegunda coordenada de la carta:");                
+                    z = pideNumero("\nPila de destino:");
+                    
+                    descartar(mesa, x, y, z);
                     op = 0;
                     break;
                 default:
