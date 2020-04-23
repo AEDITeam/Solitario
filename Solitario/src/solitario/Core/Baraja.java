@@ -35,10 +35,6 @@ public class Baraja {
         // Barajo las cartas para desordenarlas
         reordenar();
 
-        for (Carta carta : mazo) {
-
-            System.out.println(carta);
-        }
     }
 
     // Get's
