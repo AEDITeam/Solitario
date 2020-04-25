@@ -29,14 +29,14 @@ public class Jugador {
         return "Jugador{" + "nombre=" + nombre + '}';
     }
     
-    public void descartar(Mesa mesa, int i, int j, int k){
+    public static void descartar(Mesa mesa, int i, int j, int k){
           
         mesa.moverCartaInteriorExterior(i, j, k);
         
     }
     
     
-    public void moverAOtroMonton(Mesa mesa, int i, int j, int k, int l){
+    public static void moverAOtroMonton(Mesa mesa, int i, int j, int k, int l){
         
         mesa.moverCartaInteriorInterior(i, j, k, l);
         

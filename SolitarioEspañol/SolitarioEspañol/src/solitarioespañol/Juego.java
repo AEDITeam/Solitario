@@ -91,7 +91,11 @@ public class Juego {
                     k = pideNumero("\nPrimera coordenada de la pila:");
                     l = pideNumero("\nSegunda coordenada de la pila:");
                     
-                    moverAOtroMonton(mesa, i, j, k, l);
+                    //Comprobación del movimiento entre pilas interiores
+                    mesa.montonInterior[i][j].peek();
+                    mesa.montonInterior[k][l].peek();
+                    
+                    Jugador.moverAOtroMonton(mesa, i, j, k, l);
                     op = 0;
                     break;
                 case 2:
@@ -104,7 +108,11 @@ public class Juego {
                     y = pideNumero("\nSegunda coordenada de la carta:");                
                     z = pideNumero("\nPila de destino:");
                     
-                    descartar(mesa, x, y, z);
+                    //Comprobación del movimiento hacia las pilas de descartes
+                    mesa.montonInterior[x][y].peek();
+                    mesa.montonExterior[z].peek();
+                    
+                    Jugador.descartar(mesa, x, y, z);
                     op = 0;
                     break;
                 default:
