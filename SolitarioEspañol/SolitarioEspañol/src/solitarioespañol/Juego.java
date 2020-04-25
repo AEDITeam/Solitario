@@ -42,6 +42,7 @@ public class Juego {
 
                 case 1:
                     callBucleMovimiento(mesa);
+                    // función de movimientos existentes
                     break;
                 case 2:
                     //movimientosPosibles(mesa);
@@ -216,4 +217,4 @@ public class Juego {
         }
     }
     
-}
+}   
