@@ -9,6 +9,8 @@ package solitario.IU;
 import java.util.Scanner;
 import solitario.Core.Jugador;
 import solitario.Core.Mesa;
+import static solitario.IU.ES.pideCadena;
+import static solitario.IU.ES.pideNumero;
 
 
 

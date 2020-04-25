@@ -50,19 +50,9 @@ public class Mesa {
         for (int j = 0; j < 4; j++) {
             montonExterior[j] = new Stack<>();
         }
-        
-         
-        
-        
-        
-        
-        
+   
         this.colocarCartas(new Baraja());
-        this.toString();
-        
-        
-        
-        
+  
     }
 
     public void colocarCartas(Baraja b) {
@@ -107,6 +97,16 @@ public class Mesa {
             
 
     }//fin funcion
+
+    public Stack<Carta>[][] getMontonInterior() {
+        return montonInterior;
+    }
+
+    public Stack<Carta>[] getMontonExterior() {
+        return montonExterior;
+    }
+    
+    
 
     public Carta quitarCarta(Carta cartaE) {
 
