@@ -97,10 +97,17 @@ public class Juego {
                     
                     Stack <Carta> [][] montonInterior1 = mesa.getMontonInterior();
                     
-                    montonInterior1[i][j].peek();
-                    montonInterior1[k][l].peek();
+                    Carta carta1 = montonInterior1[i][j].peek();
+                    Carta carta2 = montonInterior1[k][l].peek();
                     
-                    Jugador.moverAOtroMonton(mesa, i, j, k, l);
+                    if(carta1.getNumero() == carta2.getNumero()-1 && carta1.getPalo() == carta2.getPalo()){
+                        
+                        Jugador.moverAOtroMonton(mesa, i, j, k, l);
+                        
+                    }
+                    else{
+                        System.out.println("\nMovimiento no válido");
+                    }
                     op = 0;
                     break;
                 case 2:
@@ -118,10 +125,15 @@ public class Juego {
                     Stack <Carta> [][] montonInterior2 = mesa.getMontonInterior();
                     Stack <Carta> [] montonExterior = mesa.getMontonExterior();
                     
-                    montonInterior2[x][y].peek();
-                    montonExterior[z].peek();
+                    Carta carta3 = montonInterior2[x][y].peek();
+                    Carta carta4 = montonExterior[z].peek();
                     
-                    Jugador.descartar(mesa, x, y, z);
+                    if(carta3.getNumero() == carta4.getNumero()+1 && carta3.getPalo() == carta4.getPalo()){
+                        Jugador.descartar(mesa, x, y, z);
+                    }
+                    else{
+                        System.out.println("\nMovimiento no válido");
+                    }
                     op = 0;
                     break;
                 default:
