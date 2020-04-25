@@ -42,7 +42,7 @@ public class Juego {
                     callBucleMovimiento(mesa);
                     break;
                 case 2:
-                    mesa.movimientosPosibles(  );
+                    //movimientosPosibles(mesa);
                     break;
                 case 3:
                     System.out.println( "Fin." );
