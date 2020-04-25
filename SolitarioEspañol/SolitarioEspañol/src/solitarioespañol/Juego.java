@@ -7,6 +7,8 @@ package solitarioespañol;
 import core.Jugador;
 import core.Mesa;
 import java.util.Scanner;
+import java.util.Stack;
+import core.Carta;
 import static solitarioespañol.ES.pideCadena;
 import static solitarioespañol.ES.pideNumero;
 
@@ -92,8 +94,11 @@ public class Juego {
                     l = pideNumero("\nSegunda coordenada de la pila:");
                     
                     //Comprobación del movimiento entre pilas interiores
-                    mesa.montonInterior[i][j].peek();
-                    mesa.montonInterior[k][l].peek();
+                    
+                    Stack <Carta> [][] montonInterior1 = mesa.getMontonInterior();
+                    
+                    montonInterior1[i][j].peek();
+                    montonInterior1[k][l].peek();
                     
                     Jugador.moverAOtroMonton(mesa, i, j, k, l);
                     op = 0;
@@ -109,8 +114,12 @@ public class Juego {
                     z = pideNumero("\nPila de destino:");
                     
                     //Comprobación del movimiento hacia las pilas de descartes
-                    mesa.montonInterior[x][y].peek();
-                    mesa.montonExterior[z].peek();
+                    
+                    Stack <Carta> [][] montonInterior2 = mesa.getMontonInterior();
+                    Stack <Carta> [] montonExterior = mesa.getMontonExterior();
+                    
+                    montonInterior2[x][y].peek();
+                    montonExterior[z].peek();
                     
                     Jugador.descartar(mesa, x, y, z);
                     op = 0;

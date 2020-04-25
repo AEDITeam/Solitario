@@ -15,7 +15,21 @@ public class Mesa {
 
     private Stack<Carta>[][] montonInterior;
     private Stack<Carta>[] montonExterior;
+    
+    
+    
+    
+    public Stack<Carta>[][] getMontonInterior() {
+        return montonInterior;
+    }
 
+    public Stack<Carta>[] getMontonExterior() {
+        return montonExterior;
+    }
+    
+
+    
+    
     public Mesa() {
         this.montonInterior = new Stack[4][4];
         this.montonExterior = new Stack[4];
