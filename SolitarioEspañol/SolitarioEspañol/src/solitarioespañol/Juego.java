@@ -35,6 +35,8 @@ public class Juego {
         if(mesa.existeMovimiento() == true){   
             do {
             System.out.println( "\nEstas juagando al increible juego solitario" );
+            System.out.println("\nCartas en mesa");
+            mesa.toString();
             
             mesa.toString();
             
