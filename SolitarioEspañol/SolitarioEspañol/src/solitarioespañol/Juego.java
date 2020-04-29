@@ -50,16 +50,13 @@ public class Juego {
                     }                                
                     break;
                 case 2:
-                    //numMovimientosPosibles(mesa);
-                    break;
-                case 3:
                     instrucciones();
                     break;
-                case 4:
+                case 3:
                     System.out.println( "Fin." );
                     op = 0;
                     break;
-                case 5:
+                case 4:
                     callEasterEgg();
                     break;
                 default:
@@ -189,12 +186,11 @@ public class Juego {
         do {
             System.out.println(
                               "\n1. Mover carta\n"
-                            + "2. Mostrar pista\n"
-                            + "3. Mostrar instrucciones\n"
-                            + "4. Finalizar partida\n");
+                            + "2. Mostrar instrucciones\n"
+                            + "3. Finalizar partida\n");
             toret = pideNumero( "Selecciona: " );
         } while( toret < 1
-              || toret > 5);
+              || toret > 4);
 
         System.out.println();
         return toret;
