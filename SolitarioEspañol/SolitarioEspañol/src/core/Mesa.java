@@ -15,21 +15,7 @@ public class Mesa {
 
     private Stack<Carta>[][] montonInterior;
     private Stack<Carta>[] montonExterior;
-    
-    
-    
-    
-    public Stack<Carta>[][] getMontonInterior() {
-        return montonInterior;
-    }
 
-    public Stack<Carta>[] getMontonExterior() {
-        return montonExterior;
-    }
-    
-
-    
-    
     public Mesa() {
         this.montonInterior = new Stack[4][4];
         this.montonExterior = new Stack[4];
@@ -46,19 +32,9 @@ public class Mesa {
         for (int j = 0; j < 4; j++) {
             montonExterior[j] = new Stack<>();
         }
-        
-         
-        
-        
-        
-        
-        
+   
         this.colocarCartas(new Baraja());
-        this.toString();
-        
-        
-        
-        
+  
     }
 
     public void colocarCartas(Baraja b) {
@@ -103,6 +79,16 @@ public class Mesa {
             
 
     }//fin funcion
+
+    public Stack<Carta>[][] getMontonInterior() {
+        return montonInterior;
+    }
+
+    public Stack<Carta>[] getMontonExterior() {
+        return montonExterior;
+    }
+    
+    
 
     public Carta quitarCarta(Carta cartaE) {
 
@@ -151,6 +137,63 @@ public class Mesa {
         colocarCartaMontonInterior(quitarCarta(i, j), k, l);
 
     }
+    
+    public boolean existeMovimiento() {
+
+        boolean hayMovimiento = false;
+        int h = 0;
+        int i = 0;
+        int x = 0;
+        int y = 0;
+
+        while (h < 4 && hayMovimiento == false) {
+            while (i < 4 && hayMovimiento == false) {
+                while (x < 4 && hayMovimiento == false) {
+
+                    int numeroCarta1 = montonExterior[h].peek().getNumero();
+                    int numeroCarta2 = montonInterior[x][y].peek().getNumero();
+                    Palos paloCarta1 = montonExterior[h].peek().getPalo();
+                    Palos paloCarta2 = montonInterior[x][y].peek().getPalo();
+
+                    if (paloCarta1 == paloCarta2 && numeroCarta1 == ((numeroCarta2) - 1)) {
+                        hayMovimiento = true;
+                    }
+                    x++;
+                }
+                i++;
+            }
+            h++;
+        }
+
+        x = 0;
+        i = 0;
+        h = 0;
+
+        while (h < 4 && hayMovimiento == false) {
+            while (i < 4 && hayMovimiento == false) {
+                while (x < 4 && hayMovimiento == false) {
+                    while (y < 4 && hayMovimiento == false) {
+
+                        int numeroCarta1 = montonInterior[h][i].peek().getNumero();
+                        int numeroCarta2 = montonInterior[x][y].peek().getNumero();
+                        Palos paloCarta1 = montonInterior[h][i].peek().getPalo();
+                        Palos paloCarta2 = montonInterior[x][y].peek().getPalo();
+
+                        if (paloCarta1 == paloCarta2 && numeroCarta1 == ((numeroCarta2) - 1)) {
+                            hayMovimiento = true;
+                        }
+                        y++;
+                    }
+                    x++;
+                }
+                i++;
+            }
+            h++;
+        }
+
+        return hayMovimiento;
+    }
+    
 
     @Override
     public String toString() {

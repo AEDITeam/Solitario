@@ -32,7 +32,7 @@ public class Juego {
             int op = 1;
             Mesa mesa = new Mesa();
             
-        //if(numMovimeintosPosible>0){   //Descomentar----------------------------
+        if(mesa.existeMovimiento() == true){   
             do {
             System.out.println( "\nEstas juagando al increible juego solitario" );
             
@@ -42,12 +42,12 @@ public class Juego {
             switch( op ) {
 
                 case 1:
-                    //if(numMovimeintosPosible>0){     //Descomentar----------------------------
+                    if(mesa.existeMovimiento() == true){     
                         callBucleMovimiento(mesa);
-                    //}else{                           //Descomentar----------------------------
+                    }else{                           
                         System.out.println("No quedan movimientos disponibles");
-                    //}                                //Descomentar----------------------------
-                    // función de movimientos existentes
+                        op = 0;
+                    }                                
                     break;
                 case 2:
                     //numMovimientosPosibles(mesa);
@@ -68,7 +68,7 @@ public class Juego {
             }
         } while( op != 0 );
             
-        //}            //Descomentar----------------------------
+        }            
             
         }while(seguirJugando());
     }
