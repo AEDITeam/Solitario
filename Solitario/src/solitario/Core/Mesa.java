@@ -156,61 +156,59 @@ public class Mesa {
 
     }
     
-    public boolean existeMovimiento(){
-    
+    public boolean existeMovimiento() {
+
         boolean hayMovimiento = false;
-        int h =0;
-        int i =0;
-        int x =0;
-        int y =0;
-        
-         while(h < 4 && hayMovimiento == false){
-            while(i < 4 && hayMovimiento == false){
-                while(x < 4 && hayMovimiento == false){
-                    
+        int h = 0;
+        int i = 0;
+        int x = 0;
+        int y = 0;
+
+        while (h < 4 && hayMovimiento == false) {
+            while (i < 4 && hayMovimiento == false) {
+                while (x < 4 && hayMovimiento == false) {
+
                     int numeroCarta1 = montonExterior[h].peek().getNumero();
                     int numeroCarta2 = montonInterior[x][y].peek().getNumero();
                     Palos paloCarta1 = montonExterior[h].peek().getPalo();
                     Palos paloCarta2 = montonInterior[x][y].peek().getPalo();
-                    
-                    if(paloCarta1 == paloCarta2 && numeroCarta1 == ((numeroCarta2)-1) ){
-                            hayMovimiento =true;
-                        }
+
+                    if (paloCarta1 == paloCarta2 && numeroCarta1 == ((numeroCarta2) - 1)) {
+                        hayMovimiento = true;
+                    }
                     x++;
                 }
                 i++;
             }
             h++;
-         }
-         
-         
-         x=0;
-         i=0;
-         h=0;
-        
-        while(h < 4 && hayMovimiento == false){
-            while(i < 4 && hayMovimiento == false){
-                while(x < 4 && hayMovimiento == false){
-                    while(y < 4 && hayMovimiento == false){
-                        
+        }
+
+        x = 0;
+        i = 0;
+        h = 0;
+
+        while (h < 4 && hayMovimiento == false) {
+            while (i < 4 && hayMovimiento == false) {
+                while (x < 4 && hayMovimiento == false) {
+                    while (y < 4 && hayMovimiento == false) {
+
                         int numeroCarta1 = montonInterior[h][i].peek().getNumero();
                         int numeroCarta2 = montonInterior[x][y].peek().getNumero();
                         Palos paloCarta1 = montonInterior[h][i].peek().getPalo();
                         Palos paloCarta2 = montonInterior[x][y].peek().getPalo();
-                              
-                        if(paloCarta1 == paloCarta2 && numeroCarta1 == ((numeroCarta2)-1) ){
-                            hayMovimiento =true;
+
+                        if (paloCarta1 == paloCarta2 && numeroCarta1 == ((numeroCarta2) - 1)) {
+                            hayMovimiento = true;
                         }
                         y++;
+                    }
+                    x++;
+                }
+                i++;
+            }
+            h++;
         }
-        x++;
-        }
-        i++;
-        }
-        h++;
-        }
-    
-    
+
         return hayMovimiento;
     }
     
