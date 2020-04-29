@@ -36,7 +36,6 @@ public class Juego {
             do {
             System.out.println( "\nEstas juagando al increible juego solitario" );
             System.out.println("\nCartas en mesa");
-            mesa.toString();
             
             mesa.toString();
             
