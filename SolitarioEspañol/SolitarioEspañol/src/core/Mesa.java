@@ -147,15 +147,18 @@ public class Mesa {
         int y = 0;
 
         while (h < 4 && hayMovimiento == false) {
+            i = 0;
+            x = 0;
             while (i < 4 && hayMovimiento == false) {
+                 x = 0;
                 while (x < 4 && hayMovimiento == false) {
 
-                    int numeroCarta1 = montonExterior[h].peek().getNumero();
-                    int numeroCarta2 = montonInterior[x][y].peek().getNumero();
-                    Palos paloCarta1 = montonExterior[h].peek().getPalo();
-                    Palos paloCarta2 = montonInterior[x][y].peek().getPalo();
+                    int numeroCartaExtterior = montonExterior[h].peek().getNumero();
+                    int numeroCartaInterior = montonInterior[x][y].peek().getNumero();
+                    Palos paloCartaExterior = montonExterior[h].peek().getPalo();
+                    Palos paloCartaInterior = montonInterior[x][y].peek().getPalo();
 
-                    if (paloCarta1 == paloCarta2 && numeroCarta1 == ((numeroCarta2) - 1)) {
+                    if (paloCartaExterior == paloCartaInterior && numeroCartaExtterior == ((numeroCartaInterior) - 1)) {
                         hayMovimiento = true;
                     }
                     x++;
@@ -170,8 +173,14 @@ public class Mesa {
         h = 0;
 
         while (h < 4 && hayMovimiento == false) {
+            x = 0;
+            i = 0;
+            y = 0;
             while (i < 4 && hayMovimiento == false) {
+                x = 0;
+                y = 0;
                 while (x < 4 && hayMovimiento == false) {
+                     y = 0;
                     while (y < 4 && hayMovimiento == false) {
 
                         int numeroCarta1 = montonInterior[h][i].peek().getNumero();
@@ -179,7 +188,7 @@ public class Mesa {
                         Palos paloCarta1 = montonInterior[h][i].peek().getPalo();
                         Palos paloCarta2 = montonInterior[x][y].peek().getPalo();
 
-                        if (paloCarta1 == paloCarta2 && numeroCarta1 == ((numeroCarta2) - 1)) {
+                        if (paloCarta1 == paloCarta2 && numeroCarta2 == ((numeroCarta1) - 1)) {
                             hayMovimiento = true;
                         }
                         y++;
@@ -204,12 +213,12 @@ public class Mesa {
         System.out.println("\n");
        
         for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 4; j++) {
+            
 
                 System.out.println("[" + montonInterior[i][0].peek()+ "] " + "[" +  montonInterior[i][1].peek()+ "] "   + "[" + montonInterior[i][2].peek()+ "] " + "[" + montonInterior[i][3].peek()+ "] ");
                 System.out.println("\n");
             
-            }
+            
         }
         
         
