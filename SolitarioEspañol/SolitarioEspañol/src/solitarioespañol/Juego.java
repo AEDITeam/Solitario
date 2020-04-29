@@ -38,7 +38,8 @@ public class Juego {
             System.out.println("\nCartas en mesa");
             mesa.toString();
             
-
+            mesa.toString();
+            
             op = menu();
 
             switch( op ) {
