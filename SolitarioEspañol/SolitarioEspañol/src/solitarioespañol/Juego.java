@@ -36,7 +36,8 @@ public class Juego {
             do {
             System.out.println( "\nEstas juagando al increible juego solitario" );
             
-
+            mesa.toString();
+            
             op = menu();
 
             switch( op ) {

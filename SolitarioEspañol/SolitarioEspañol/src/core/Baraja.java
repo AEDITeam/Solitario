@@ -41,10 +41,7 @@ public class Baraja {
         // Barajo las cartas para desordenarlas
         reordenar();
 
-        for (Carta carta : mazo) {
-
-            System.out.println(carta);
-        }
+        
     }
 
     // Get's
@@ -58,7 +55,7 @@ public class Baraja {
 
         Random genRandom = new Random();
 
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 10000; i++) {
 
             //tomo un Nº aleatorio dentro del mazo
             int numRandom = genRandom.nextInt(39) + 1;
