@@ -175,50 +175,7 @@ public class Mesa {
     }
     
 
-    @Override
-    public String toString() {
-
-        //Escribo el monton de descartes
-        
-//        System.out.println("" + montonExterior[0].peek() + montonExterior[1].peek() + montonExterior[2].peek() + montonExterior[3].peek());
-//        System.out.println("\n");
-            
-            try {
-                System.out.print( montonExterior[0].peek()+"\t");
-        } catch (Exception e) {
-                System.out.print("[-----]\t\t");
-        }
-            try {
-                System.out.print( montonExterior[1].peek()+"\t");
-        } catch (Exception e) {
-                System.out.print("[-----]\t\t");
-        }
-            try {
-                System.out.print( montonExterior[2].peek()+"\t");
-        } catch (Exception e) {
-                System.out.print("[-----]\t\t");
-        }
-            try {
-                System.out.print( montonExterior[3].peek()+"\t");
-        } catch (Exception e) {
-                System.out.print("[-----]\t\t");
-        }
-           
-            System.out.println("\n");
-       
-        //escribo el monton interior
-        for (int i = 0; i < 4; i++) {
-            
-
-                System.out.println(""+ montonInterior[0][i].peek()+ "\t" + montonInterior[1][i].peek()+ "\t" + montonInterior[2][i].peek()+ "\t" + montonInterior[3][i].peek());
-
-            
-            
-        }
-        
-        
-        return "";
-    }
+    
     
     private boolean verificarMovimiento(int x, int y , int j){
     
@@ -256,7 +213,11 @@ public class Mesa {
         }
     }
     
-    return num2==numerosCartas[pos+1];
+    if(pos==numerosCartas.length || num2==numerosCartas[pos+1]){
+        return true;
+    }
+    
+    return false;
     
     }
     
@@ -276,6 +237,70 @@ public class Mesa {
         }
 
         return false;
+    }
+    
+    
+    @Override
+    public String toString() {
+
+        //Escribo el monton de descartes
+            
+            try {
+                System.out.print( montonExterior[0].peek()+"\t");
+        } catch (Exception e) {
+                System.out.print("[-----]\t\t");
+        }
+            try {
+                System.out.print( montonExterior[1].peek()+"\t");
+        } catch (Exception e) {
+                System.out.print("[-----]\t\t");
+        }
+            try {
+                System.out.print( montonExterior[2].peek()+"\t");
+        } catch (Exception e) {
+                System.out.print("[-----]\t\t");
+        }
+            try {
+                System.out.print( montonExterior[3].peek()+"\t");
+        } catch (Exception e) {
+                System.out.print("[-----]\t\t");
+        }
+           
+            System.out.println("\n");
+       
+        //escribo el monton interior
+        for (int i = 0; i < 4; i++) {
+            
+//                System.out.println(""+ montonInterior[0][i].peek()+ "\t" + montonInterior[1][i].peek()+ "\t" + montonInterior[2][i].peek()+ "\t" + montonInterior[3][i].peek());
+            try {
+                System.out.print( montonInterior[0][i].peek()+"\t");
+        } catch (Exception e) {
+                System.out.print("[-----]\t\t");
+        }
+            try {
+                System.out.print( montonInterior[1][i].peek()+"\t");
+        } catch (Exception e) {
+                System.out.print("[-----]\t\t");
+        }
+            try {
+                System.out.print( montonInterior[2][i].peek()+"\t");
+        } catch (Exception e) {
+                System.out.print("[-----]\t\t");
+        }
+            try {
+                System.out.print( montonInterior[3][i].peek()+"\t");
+        } catch (Exception e) {
+                System.out.print("[-----]\t\t");
+        }
+           
+            System.out.println("\n");
+    
+            
+            
+        }
+        
+        
+        return "";
     }
 
 }//fin clase-----------------------------------------
