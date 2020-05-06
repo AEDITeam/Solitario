@@ -194,7 +194,7 @@ public class Mesa {
          int numeroCartaInterior = montonInterior[x][y].peek().getNumero();
          Palos paloCartaExterior = montonExterior[j].peek().getPalo();
          Palos paloCartaInterior = montonInterior[x][y].peek().getPalo();
-        if(paloCartaInterior == paloCartaExterior && esSiguiente(numeroCartaInterior, numeroCartaExterior)){
+        if(paloCartaInterior == paloCartaExterior && esSiguiente(numeroCartaExterior, numeroCartaInterior)){
             return true;
         }
     }
