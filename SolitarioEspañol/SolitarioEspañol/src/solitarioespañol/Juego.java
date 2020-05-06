@@ -225,22 +225,14 @@ public class Juego {
         j = pideNumero("\nSegunda coordenada de la carta:");
         k = pideNumero("\nPrimera coordenada de la pila:");
         l = pideNumero("\nSegunda coordenada de la pila:");
+                                        
                     
-                    //Comprobación del movimiento entre pilas interiores
-                    
-        Stack <Carta> [][] montonInterior1 = mesa.getMontonInterior();
-                    
-        Carta carta1 = montonInterior1[i][j].peek();
-        Carta carta2 = montonInterior1[k][l].peek();
-                    
-        if(carta1.getNumero() == carta2.getNumero()-1 && carta1.getPalo() == carta2.getPalo()){
+        if(!Jugador.moverAOtroMonton(mesa, i, j, k, l)){
                         
-            Jugador.moverAOtroMonton(mesa, i, j, k, l);
-                        
-        }
-        else{
             System.out.println("\nMovimiento no válido");
+                        
         }
+        
     }
         
     public static void moverExterior(Mesa mesa){
@@ -252,20 +244,11 @@ public class Juego {
         y = pideNumero("\nSegunda coordenada de la carta:");                
         z = pideNumero("\nPila de destino:");
                     
-                    //Comprobación del movimiento hacia las pilas de descartes
                     
-        Stack <Carta> [][] montonInterior2 = mesa.getMontonInterior();
-        Stack <Carta> [] montonExterior = mesa.getMontonExterior();
-                    
-        Carta carta3 = montonInterior2[x][y].peek();
-        Carta carta4 = montonExterior[z].peek();
-                    
-        if(carta3.getNumero() == carta4.getNumero()+1 && carta3.getPalo() == carta4.getPalo()){
-            Jugador.descartar(mesa, x, y, z);
-        }
-        else{
+        if(!Jugador.descartar(mesa, x, y, z)){
             System.out.println("\nMovimiento no válido");
         }
+        
     }
     
 }   
