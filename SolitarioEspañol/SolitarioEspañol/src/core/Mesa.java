@@ -144,7 +144,7 @@ public class Mesa {
     public boolean moverCartaInteriorInterior(int x, int y,int j,int k){
             
          //La verificacion se hace al reves, porque Verificar movimiento compara si la primera carta es la siguiente a la segunda
-         if(verificarMovimiento(j,k,x,y)){
+         if(verificarMovimiento(x,y,j,k)){
         colocarCartaMontonInterior(quitarCarta(x, y), j, k);
         return true;
          }
