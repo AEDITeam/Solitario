@@ -32,8 +32,8 @@ public class Carta {
     public String toString() {
         StringBuilder cadena = new StringBuilder();
 
-        cadena.append(numero).append("-");
-        cadena.append(palo);
+        cadena.append("[").append(numero).append("-");
+        cadena.append(palo).append("]");
         
        
         return cadena.toString();
