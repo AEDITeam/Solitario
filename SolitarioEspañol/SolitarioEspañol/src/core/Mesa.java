@@ -213,7 +213,10 @@ public class Mesa {
         }
     }
     
-    if(pos==numerosCartas.length || num2==numerosCartas[pos+1]){
+    if(pos==numerosCartas.length ){
+        return true;
+    }
+    if(num2==numerosCartas[pos+1]){
         return true;
     }
     
