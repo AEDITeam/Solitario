@@ -210,7 +210,7 @@ public class Mesa {
         for (int i = 0; i < 4; i++) {
             
 
-                System.out.println(""+ montonInterior[0][i].peek()+ "\t" + montonInterior[1][i].peek()+ "\t" + montonInterior[2][1].peek()+ "\t" + montonInterior[3][i].peek());
+                System.out.println(""+ montonInterior[0][i].peek()+ "\t" + montonInterior[1][i].peek()+ "\t" + montonInterior[2][i].peek()+ "\t" + montonInterior[3][i].peek());
 
             
             
