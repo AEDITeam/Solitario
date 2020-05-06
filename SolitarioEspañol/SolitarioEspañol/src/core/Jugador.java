@@ -29,16 +29,16 @@ public class Jugador {
         return "Jugador{" + "nombre=" + nombre + '}';
     }
     
-    public static void descartar(Mesa mesa, int i, int j, int k){
+    public static boolean descartar(Mesa mesa, int i, int j, int k){
           
-        mesa.moverCartaInteriorExterior(i, j, k);
+        return mesa.moverCartaInteriorExterior(i, j, k);
         
     }
     
     
-    public static void moverAOtroMonton(Mesa mesa, int i, int j, int k, int l){
+    public static boolean moverAOtroMonton(Mesa mesa, int i, int j, int k, int l){
         
-        mesa.moverCartaInteriorInterior(i, j, k, l);
+        return mesa.moverCartaInteriorInterior(i, j, k, l);
         
     }   
 }
