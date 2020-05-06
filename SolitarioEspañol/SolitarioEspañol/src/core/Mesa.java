@@ -121,30 +121,34 @@ public class Mesa {
     
    /**
     * 
-    * @param i cordenada X de la carta que se desea quitar
-    * @param j cordenada Y de la carta que se desea quitar
+    * @param x cordenada X de la carta que se desea quitar
+    * @param y cordenada Y de la carta que se desea quitar
     * @param k cordenada X a la cual se desea mover la carta del monton exterior
     */
-    public void moverCartaInteriorExterior(int i, int j,int k){
+    public boolean moverCartaInteriorExterior(int x, int y,int j){
         
-        if(verificarMovimiento(i, j, k)){
-            colocarCartaMontonExterior(quitarCarta(i, j), k);
+        if(verificarMovimiento(x, y, j)){
+            colocarCartaMontonExterior(quitarCarta(x, y), j);
+            return true;
         }
         
-
+        return false;
     }
     /**
      * 
-     * @param i cordenada X de la carta que se desea mover
-     * @param j cordenada Y de la carta que se desea mover
-     * @param k cordenada X a donde se va a mover la carta quitada
-     * @param l cordenada Y a donde se va a mover la carta quitada
+     * @param x cordenada X de la carta que se desea mover
+     * @param y cordenada Y de la carta que se desea mover
+     * @param j cordenada X a donde se va a mover la carta quitada
+     * @param k cordenada Y a donde se va a mover la carta quitada
      */
-    public void moverCartaInteriorInterior(int i, int j,int k,int l){
-    
-         if(verificarMovimiento(i, j, k,l)){
-        colocarCartaMontonInterior(quitarCarta(i, j), k, l);
+    public boolean moverCartaInteriorInterior(int x, int y,int j,int k){
+            
+         //La verificacion se hace al reves, porque Verificar movimiento compara si la primera carta es la siguiente a la segunda
+         if(verificarMovimiento(j,k,x,y)){
+        colocarCartaMontonInterior(quitarCarta(x, y), j, k);
+        return true;
          }
+        return false;
     }
     
 //    //verifica si existe algun movimiento posible
@@ -159,7 +163,7 @@ public class Mesa {
                             return true;
                         }
                         
-                        if(verificarMovimiento(x, y, j,k)== true){
+                        if(verificarMovimiento(j,k,x,y)== true){
                             return true;
                         }
         }//fin bucle X
