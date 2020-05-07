@@ -204,6 +204,10 @@ public class Mesa {
     
     private boolean esSiguiente(int num,int num2){
     
+    if(num == 12){
+        return false;
+    }
+        
     int[] numerosCartas = {1, 2, 3, 4, 5, 6, 7, 10, 11, 12};
     int pos=0;
     for(int i = 0; i < numerosCartas.length; i++){
@@ -213,9 +217,6 @@ public class Mesa {
         }
     }
     
-    if(pos==numerosCartas.length ){
-        return true;
-    }
     if(num2==numerosCartas[pos+1]){
         return true;
     }
