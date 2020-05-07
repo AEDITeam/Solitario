@@ -226,12 +226,12 @@ public class Juego {
             j = pideNumero("\nSegunda coordenada de la carta:");
             k = pideNumero("\nPrimera coordenada de la pila:");
             l = pideNumero("\nSegunda coordenada de la pila:");
-        } while ((i <= 0 || i > 4) || (j <= 0 || j > 4) || (k <= 0 || k > 4) || (l <= 0 || l > 4)); 
+        } while ((i < 0 || i > 4) || (j < 0 || j > 4) || (k < 0 || k > 4) || (l < 0 || l > 4)); 
                                         
                     
         if(!Jugador.moverAOtroMonton(mesa, i, j, k, l)){
                         
-            System.out.println("\nMovimiento no válido");
+            System.err.println("\nMovimiento no válido");
                         
         }
         
@@ -246,11 +246,11 @@ public class Juego {
             x = pideNumero("\nPrimera coordenada de la carta:");               
             y = pideNumero("\nSegunda coordenada de la carta:");                
             z = pideNumero("\nPila de destino:");
-        }while( (x<=0 || x>4) || (y<=0 || y>4) || (z<=0 || z>4) );
+        }while( (x<0 || x>4) || (y<0 || y>4) || (z<0 || z>4) );
                     
                     
         if(!Jugador.descartar(mesa, x, y, z)){
-            System.out.println("\nMovimiento no válido");
+            System.err.println("\nMovimiento no válido");
         }
         
     }
