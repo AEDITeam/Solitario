@@ -243,9 +243,13 @@ public class Juego {
         System.out.println("Escoge las coordenadas de una carta y la pila de descartes de destino:\n");
         
         do{
-            x = pideNumero("\nPrimera coordenada de la carta:");               
-            y = pideNumero("\nSegunda coordenada de la carta:");                
+            x = pideNumero("\nPrimera coordenada de la carta:");
+            x--;
+            y = pideNumero("\nSegunda coordenada de la carta:");
+            y--;
             z = pideNumero("\nPila de destino:");
+            z--;
+            
         }while( (x<0 || x>4) || (y<0 || y>4) || (z<0 || z>4) );
                     
                     
