@@ -248,11 +248,8 @@ public class Juego {
             y = pideNumero("\nSegunda coordenada de la carta:");
             y--;
             z = pideNumero("\nPila de destino:");
-<<<<<<< HEAD
-=======
             z--;
             
->>>>>>> 0ab134c1901c7a7e0b290283b730b1fd8f2c30ef
         }while( (x<0 || x>4) || (y<0 || y>4) || (z<0 || z>4) );
                     
                     
