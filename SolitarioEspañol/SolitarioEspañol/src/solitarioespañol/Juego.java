@@ -183,16 +183,21 @@ public class Juego {
     
     public static int menu()
     {
-        int toret;
+        int toret=0;
 
-        do {
-            System.out.println(
+        do{
+            try{
+                System.out.println(
                               "\n1. Mover carta\n"
                             + "2. Mostrar instrucciones\n"
                             + "3. Finalizar partida\n");
-            toret = pideNumero( "Selecciona: " );
-        } while( toret < 1
-              || toret > 4);
+                toret = pideNumero( "Selecciona: " );
+            }
+            catch(NumberFormatException e){
+                System.out.println("\nTipo de dato no válido\n");
+            }
+        } 
+        while( toret < 1 || toret > 4);
 
         System.out.println();
         return toret;
@@ -201,15 +206,20 @@ public class Juego {
         //Condiciones para mover carta
         //Elegir funcion correspondiente en funcion de tipo de movimiento
         
-        int toret2;
+        int toret2=0;
         
         do{
-        System.out.println(
+            try{
+                System.out.println(
                            "\n1. Mover una carta de una pila de la mesa a otra\n"
                            + "2. Mover una carta de una pila del interior a la pila de descartes\n");
-        toret2 = pideNumero( "Selecciona: ");
-        
-        }while (toret2 < 1 || toret2 > 2);
+                toret2 = pideNumero( "Selecciona: ");
+            }
+            catch(NumberFormatException e){
+                System.out.println("\nTipo de dato no válido\n");
+            }
+        }
+        while (toret2 < 1 || toret2 > 2);
         System.out.println();
         
         return toret2;
@@ -217,15 +227,20 @@ public class Juego {
     }
     
     public static void moverInterior(Mesa mesa){
-        int i, j ,k ,l;
+        int i=0, j=0 ,k=0 ,l=0;
                 
         do {
-            System.out.println("Escoge las coordenadas de una carta y de la pila interior de destino:\n");
+            try{
+                System.out.println("Escoge las coordenadas de una carta y de la pila interior de destino:\n");
 
-            i = pideNumero("\nPrimera coordenada de la carta:");
-            j = pideNumero("\nSegunda coordenada de la carta:");
-            k = pideNumero("\nPrimera coordenada de la pila:");
-            l = pideNumero("\nSegunda coordenada de la pila:");
+                i = pideNumero("\nPrimera coordenada de la carta:");
+                j = pideNumero("\nSegunda coordenada de la carta:");
+                k = pideNumero("\nPrimera coordenada de la pila:");
+                l = pideNumero("\nSegunda coordenada de la pila:");
+            }
+            catch(NumberFormatException e){
+                System.out.println("\nTipo de dato no válido\n");
+            }
         } while ((i < 0 || i > 3) || (j < 0 || j > 3) || (k < 0 || k > 3) || (l < 0 || l > 3)); 
                                         
                     
@@ -238,18 +253,22 @@ public class Juego {
     }
         
     public static void moverExterior(Mesa mesa){
-        int x, y ,z;
+        int x=0, y=0 ,z=0;
              
         System.out.println("Escoge las coordenadas de una carta y la pila de descartes de destino:\n");
         
         do{
-            x = pideNumero("\nPrimera coordenada de la carta:");
-            x--;
-            y = pideNumero("\nSegunda coordenada de la carta:");
-            y--;
-            z = pideNumero("\nPila de destino:");
-            z--;
-            
+            try{
+                x = pideNumero("\nPrimera coordenada de la carta:");
+                x--;
+                y = pideNumero("\nSegunda coordenada de la carta:");
+                y--;
+                z = pideNumero("\nPila de destino:");
+                z--;
+            }
+            catch(NumberFormatException e){
+                System.out.println("\nTipo de dato no válido\n");
+            }
         }while( (x<0 || x>3) || (y<0 || y>3) || (z<0 || z>3) );
                     
                     
