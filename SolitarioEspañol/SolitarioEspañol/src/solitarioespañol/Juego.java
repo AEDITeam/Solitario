@@ -234,9 +234,13 @@ public class Juego {
                 System.out.println("Escoge las coordenadas de una carta y de la pila interior de destino:\n");
 
                 i = pideNumero("\nPrimera coordenada de la carta:");
+                i--;
                 j = pideNumero("\nSegunda coordenada de la carta:");
+                j--;
                 k = pideNumero("\nPrimera coordenada de la pila:");
+                k--;
                 l = pideNumero("\nSegunda coordenada de la pila:");
+                l--;
             }
             catch(NumberFormatException e){
                 System.out.println("\nTipo de dato no válido\n");
